@@ -1,0 +1,90 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.flex-hijos {
+  background: lightcoral;
+  color: white;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1%;
+}
+
+.flex-container {
+  border: 1px solid violet;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+  height: 100vh;
+}
+/* ESTILOS PARA LOS HIJOS FLEX 
+ Las propiedades de los flex items trabajan juntas, y se condicionan o se "miran" para saber que hacer.
+*/
+/* FLEX BASIS: es el tamaño base del elemento flex, por defecto es "auto", por lo tanto mira el tamaño de la propiedad width */
+
+/* este sería una situación básica.
+  1- la propiedad flex-basis mira a la propiedad width para saber que tamaño debe tener.
+  2- flex-grow: esta en su valor por defecto
+  3- flex-shrink: la cambiamos a 0 para ver mejor el ejemplo. Por defecto esta en 1.
+*/
+.flex-basis .flex-hijos {
+  /* width: calc((100% / 5) - 2%);
+  flex-basis: auto; */
+  /* lo de abajo equivale a lo superior */
+  /* flex-basis: calc((100% / 5) - 2%);
+  flex-grow: 0;
+  flex-shrink: 0; */
+}
+
+/* FLEX GROW: por defecto esta en 0. que significa que no deben crecer para ocupar el espacio libre */
+
+/* .flex-hijos {
+  flex-grow: 1;
+}
+
+.flex-hijos:first-child {
+  flex-grow: 2;
+}
+
+.flex-hijos:nth-child(4) {
+  flex-grow: 0;
+}
+
+.flex-hijos:nth-child(6) {
+  flex-grow: 6;
+} */
+
+/* FLEX shrink: por defecto esta en 1. que significa que elemento se puede achicar para encajar en el contenedor 
+*/
+/* .flex-shrink .flex-hijos {
+  flex-grow: 1;
+  flex-basis: 150px;
+  flex-shrink: 1; */
+}
+
+/* que pasa si lo cambiamos a 0? el contenedor se colapsa*/
+/* .flex-shrink .flex-hijos {
+  flex-shrink: 0;
+} */
+
+/* shorthand para estas tres propiedades */
+/* flex: grow shrink basis */
+/* .flex-shrink .flex-hijos {
+  flex: 1 0 150px;
+} */

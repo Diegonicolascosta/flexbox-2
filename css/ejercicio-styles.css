@@ -1,0 +1,110 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.clean-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.clean-list li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.clean-list li:last-of-type {
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section {
+  border-bottom: 1px solid darkorange;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+.link-a-mas-fotos {
+  padding: 30px;
+  background: darkorange;
+  color: white;
+  font-size: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .link-a-mas-fotos {
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* colocar la propiedad necesaria para que el contenedor sea flex */
+.flex-container {
+
+}
+
+/* Acomodar el header 
+1 - en la versión movil, los elementos tienen que estar uno abajo del otro.
+2 - en la versión desktop, los elementos tienen que estar en la misma fila
+    pero uno a la izquierda y el otro a la derecha.
+3 - Intentemos hacerlo sin media queries.
+*/
+
+
+/* Acomodar la primer sección 
+1 - Tanto en la versión desktop como la móvil, los elementos tienen que estar
+uno debajo del otro.
+*/
+
+
+
+/* Acomodar la segunda sección 
+1 - en la versión móvil, los elementos tienen que estar uno debajo del otro.
+2 - en la versión desktop, tienen que estar:
+  a - el título ocupar toda una fila.
+  b - los articulos tienen que estar uno al lado del otro.
+  c - el primer articulo tiene que ocupar 2 espacios más que el resto.
+  d - utilicemos media queries para ajustar las versiones movil y desktops
+*/
+
+
+
+
+/* Acomodar la tercera sección 
+1 - en la versión móvil, solo dos imagenes deben estar juntas.
+  El botón del final debe ocupar todo el ancho.
+2 - en la versión desktop, tienen que estar:
+  a - el título ocupar toda una fila.
+  b - los articulos tienen que estar uno al lado del otro, hasta 4 fotos por fila.
+  c - en la fila donde este el botón, las imágenes se deben mantener en su tamaño,
+    pero el botón debe crecer para ocupar el espacio restante.
+  d - utilicemos media queries para cambiar las propiedades.
+*/
+
+
+
+
+
+/* Acomodar el footer 
+1 - en la versión movil, los elementos tienen que estar uno abajo del otro.
+2 - en la versión desktop, los elementos tienen que estar en la misma fila
+    pero uno a la izquierda y el otro a la derecha.
+3 - tienen que separarse en la versión desktop por 15px en el medio.
+4 - vamos a utilizar media queries.
+*/
