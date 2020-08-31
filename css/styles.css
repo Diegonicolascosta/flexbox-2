@@ -72,8 +72,8 @@ body {
 
 /* FLEX shrink: por defecto esta en 1. que significa que elemento se puede achicar para encajar en el contenedor 
 */
-/* .flex-shrink .flex-hijos {
-  flex-grow: 1;
+.flex-shrink .flex-hijos {
+  /* flex-grow: 1;
   flex-basis: 150px;
   flex-shrink: 1; */
 }
@@ -88,3 +88,36 @@ body {
 /* .flex-shrink .flex-hijos {
   flex: 1 0 150px;
 } */
+
+/* La propiedad order por defecto esta en 0 para todos los elementos flex-items
+Si cambiamos esta propiedad para alguno de los elementos, la variación de posición
+puede que no sea la esperada, vemos un ejemplo:
+*/
+
+.flex-order .flex-hijos:nth-child(1) {
+  /* se fue al final de la fila, porque el resto esta en 0. */
+  order: 1;
+}
+  /* el segundo elemento ahora si se posiciona al final
+  las posiciones serian:
+  0 0 0 0 1 2
+  */
+.flex-order .flex-hijos:nth-child(2) {
+  order: 3;
+}
+
+/* el segundo elemento ahora si se posiciona entre el 1 y el 3
+  las posiciones serian:
+  0 0 0 1 2 3
+  */
+.flex-order .flex-hijos:nth-child(3) {
+  order: 2;
+}
+
+/* el segundo elemento ahora si se posiciona al inicio
+  las posiciones serian:
+  -3 0 0 1 2 3
+  */
+.flex-order .flex-hijos:nth-child(6) {
+  order: -3;
+}
