@@ -129,3 +129,21 @@ las posiciones serian:
 /* .flex-order .flex-hijos:nth-child(6) {
   order: -3;
 } */
+
+
+/* align self */
+/* .flex-align-self {
+  height: 500px;
+} */
+
+/* .flex-align-self .flex-hijos:nth-child(1) {
+  align-self: flex-start;
+}
+
+.flex-align-self .flex-hijos:nth-child(3) {
+  align-self: center;
+}
+
+.flex-align-self .flex-hijos:nth-child(6) {
+  align-self: flex-end;
+} */
