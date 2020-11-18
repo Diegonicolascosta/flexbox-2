@@ -6,13 +6,14 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
   color: #444;
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1070px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 15px 30px;
 }
 
 .clean-list {
@@ -54,90 +55,76 @@ a {
   }
 }
 
-/* colocar la propiedad necesaria para que el contenedor sea flex */
-.flex-container {
-  display: flex;
-}
-
-/* Acomodar el header 
-1 - en la versión movil, los elementos tienen que estar uno abajo del otro.
-2 - en la versión desktop, los elementos tienen que estar en la misma fila
-    pero uno a la izquierda y el otro a la derecha.
-3 - Intentemos hacerlo sin media queries.
-*/
-.header .flex-container {
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.header .flex-container > div {
-  flex-basis: 320px;
-  flex-shrink: 0;
-}
-
-/* Acomodar la primer sección 
-1 - Tanto en la versión desktop como la móvil, los elementos tienen que estar
-uno debajo del otro.
-*/
-
-#section-1 .flex-container {
-  flex-direction: column;
-}
+/* =========
+  1 - Colocar la propiedad necesaria para que el contenedor flex-container sea flex
+      Quizás sea necesario utilizar una media query??
+========= */
 
 
-/* Acomodar la segunda sección 
-1 - en la versión móvil, los elementos tienen que estar uno debajo del otro.
-2 - en la versión desktop, tienen que estar:
+/* =========
+2 - Acomodar el header 
+  a - en la versión movil, los elementos tienen que estar uno abajo del otro.
+  b - en la versión desktop, los elementos tienen que estar en la misma fila
+      pero uno a la izquierda y el otro a la derecha.
+========= */
+
+
+/* =========
+3 - Acomodar la primer sección 
+  a - Tanto en la versión desktop como la móvil, los elementos tienen que estar
+  uno debajo del otro.
+========= */
+
+
+/* ========= 
+4 - Acomodar la segunda sección 
+  a - en la versión móvil, los elementos tienen que estar uno debajo del otro.
+  b - en la versión desktop, tienen que estar (puedes que necesites crear una media query):
+    b1 - el título ocupar toda una fila.
+    b2 - los articulos tienen que estar uno al lado del otro.
+    b3 - el primer articulo tiene que ocupar 2 espacios más que el resto. Quizás para poder
+         hacer crecer el primer artículo, sea necesario crear 4 columnas y no 3.
+    b4 - utilicemos media queries para ajustar las versiones movil y desktops
+========= */
+
+
+/* =========
+5 - Acomodar la tercera sección 
   a - el título ocupar toda una fila.
-  b - los articulos tienen que estar uno al lado del otro.
-  c - el primer articulo tiene que ocupar 2 espacios más que el resto.
-  d - utilicemos media queries para ajustar las versiones movil y desktops
-*/
-
-#section-2 .flex-container {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  #section-2 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  #section-2 h2 {
-    flex-basis: 100%;
-  }
-
-  #section-2 article {
-    flex-basis: calc((100% / 3) - 15px);
-  }
-  #section-2 .article-1 {
-    flex-grow: 2;
-  }
-}
+  b - en la versión móvil, solo dos imagenes deben estar juntas.
+      El botón del final debe ocupar todo el ancho.
+  c - en la versión desktop, tienen que estar:
+    c1 - los articulos tienen que estar uno al lado del otro, hasta 4 fotos por fila.
+    c2 - en la fila donde este el botón, las imágenes se deben mantener en su tamaño,
+         pero el botón debe crecer para ocupar el espacio restante.
+    c3 - utilicemos media queries para cambiar las propiedades.
+========= */
 
 
+/* =========
+6 - Acomodar el footer 
+  a - en la versión movil, los elementos tienen que estar uno abajo del otro.
+  b - en la versión desktop, los elementos tienen que estar en la misma fila
+      pero uno a la izquierda y el otro a la derecha.
+  c - tienen que separarse en la versión desktop por 15px en el medio.
+  d - vamos a utilizar media queries.
+========= */
 
-/* Acomodar la tercera sección 
-1 - en la versión móvil, solo dos imagenes deben estar juntas.
-  El botón del final debe ocupar todo el ancho.
-2 - en la versión desktop, tienen que estar:
-  a - el título ocupar toda una fila.
-  b - los articulos tienen que estar uno al lado del otro, hasta 4 fotos por fila.
-  c - en la fila donde este el botón, las imágenes se deben mantener en su tamaño,
-    pero el botón debe crecer para ocupar el espacio restante.
-  d - utilicemos media queries para cambiar las propiedades.
-*/
+/* =========
+7 - Incluye google fonts 
+  a - Elige 2 familias tipográficas cualquieras. (Sugerencias Nunito 400 / 700, y
+      Roboto Slab 500)
+  b - Incluye la tipografía al documento.
+  c - La tipografía por defecto debe ser Nunito 400.
+  d - Los elementos heading tienen que ser Roboto Slab.
+  e - El elemento link-a-mas-fotos tiene que usar Nunito 700.
+========= */
 
-
-
-
-
-/* Acomodar el footer 
-1 - en la versión movil, los elementos tienen que estar uno abajo del otro.
-2 - en la versión desktop, los elementos tienen que estar en la misma fila
-    pero uno a la izquierda y el otro a la derecha.
-3 - tienen que separarse en la versión desktop por 15px en el medio.
-4 - vamos a utilizar media queries.
-*/
+/* =========
+8 - Tipografía responsive 
+  a - Cambia los valores en px, por medidas relativas, utiliza rem.
+  b - Verifica si en móvil y desktop el tamaño es correcto, o si es necesario
+      crear una media query para justar los tamaños.
+  c - Opcional, te animas a seguir el ejemplo de tipografía flexible??
+      https://codepen.io/mirisuzanne/pen/39ad1e5d872446c97a09565a6d16d81e?editors=1100
+========= */

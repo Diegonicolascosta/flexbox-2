@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1070px;
   margin: 0 auto;
 }
 
@@ -20,6 +20,10 @@ body {
   border-radius: 5px;
   padding: 1%;
   margin: 1%;
+}
+
+.flex-grow .flex-hijos {
+  background: grey;
 }
 
 .flex-container {
@@ -47,26 +51,26 @@ body {
   width: calc((100% / 5) - 2%);
   flex-basis: auto;
   /* lo de abajo equivale a lo superior */
-  /* flex-basis: calc((100% / 5) - 2%); */
-  /* flex-grow: 1; */
-  /* flex-shrink: 0; */
+  /* flex-basis: calc((100% / 5) - 2%);
+  flex-grow: 1;
+  flex-shrink: 0; */
 }
 
 /* FLEX GROW: por defecto esta en 0. que significa que no deben crecer para ocupar el espacio libre */
 
- /* .flex-hijos {
+/* .flex-grow .flex-hijos {
   flex-grow: 1;
 }
 
-.flex-hijos:first-child {
+.flex-grow .flex-hijos:first-child {
   flex-grow: 2;
 }
 
-.flex-hijos:nth-child(4) {
+.flex-grow .flex-hijos:nth-child(4) {
   flex-grow: 0;
 }
 
-.flex-hijos:nth-child(6) {
+.flex-grow .flex-hijos:nth-child(6) {
   flex-grow: 6;
 }  */
 
@@ -74,10 +78,10 @@ body {
 */
 /* .flex-shrink .flex-hijos {
   flex-grow: 1;
-  flex-basis: 150px;
+  flex-basis: 250px;
   flex-shrink: 1;
-}
-.flex-shrink .flex-hijos:nth-child(3) {
+} */
+/* .flex-shrink .flex-hijos:nth-child(3) {
   flex-shrink: 3;
 } */
 
@@ -97,30 +101,31 @@ Si cambiamos esta propiedad para alguno de los elementos, la variación de posic
 puede que no sea la esperada, vemos un ejemplo:
 */
 
-.flex-order .flex-hijos:nth-child(1) {
-  /* se fue al final de la fila, porque el resto esta en 0. */
+/* se fue al final de la fila, porque el resto esta en 0. */
+/* .flex-order .flex-hijos:nth-child(1) {
   order: 1;
-}
-  /* el segundo elemento ahora si se posiciona al final
-  las posiciones serian:
-  0 0 0 0 1 2
-  */
-.flex-order .flex-hijos:nth-child(2) {
+} */
+
+/* el segundo elemento ahora si se posiciona al final
+las posiciones serian:
+0 0 0 0 1 2
+*/
+/* .flex-order .flex-hijos:nth-child(2) {
   order: 3;
-}
+} */
 
 /* el segundo elemento ahora si se posiciona entre el 1 y el 3
   las posiciones serian:
   0 0 0 1 2 3
   */
-.flex-order .flex-hijos:nth-child(3) {
+/* .flex-order .flex-hijos:nth-child(3) {
   order: 2;
-}
+} */
 
 /* el segundo elemento ahora si se posiciona al inicio
   las posiciones serian:
   -3 0 0 1 2 3
   */
-.flex-order .flex-hijos:nth-child(6) {
+/* .flex-order .flex-hijos:nth-child(6) {
   order: -3;
-}
+} */
